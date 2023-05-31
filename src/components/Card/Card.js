@@ -14,7 +14,7 @@ const Card = () => {
             </div>
         
                 
-            <button className='button'>Add new pic</button>
+            <button className='button'>Get a new meme image</button>
             
         
                 <img className='image' src={Fry} alt='fry' />

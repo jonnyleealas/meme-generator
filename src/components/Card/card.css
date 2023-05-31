@@ -45,6 +45,11 @@
     background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
 
     margin-top: 2em;
+    
+    font-family: Karla;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
 }
 
 .image {
