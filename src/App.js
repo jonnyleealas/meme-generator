@@ -6,27 +6,12 @@ import Memes from './memeData'
 
 function App() {
 
-  const memeData = Memes.map((data) => {
 
-    return (
-      <div>
-        
-        <Card
-          id={data.id}
-          data={data}
-         />
-        
-       
-        
-      </div>
-    )
-  })
 
   return (
     <div className="App">
       <Header />
-   
-      {memeData}
+      <Card />
     </div>
   );
 }

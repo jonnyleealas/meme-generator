@@ -1,12 +1,21 @@
 import './card.css'
 import Fry from '../Card/cardImage/memeimg.png'
+import Memes from '../../memeData'
 
 
-const Card = (props) => {
+const Card = () => {
+    
 
-    const clickMe = () => {
-        return alert('hello')
-    }
+  const handleClick = () => {
+    const memeLength = Memes.length
+    const randomNumber = Math.floor(Math.random() * memeLength)
+    const newMeme = Memes[randomNumber].name
+  console.log('Memes:', randomNumber)
+  console.log('Memes:', Memes[randomNumber].name)
+    return 
+    
+  }
+
 
     return (
         <div className='card'>
@@ -14,9 +23,9 @@ const Card = (props) => {
                 <input className='input-1' type='text' placeholder=' type some stuff' />
                 <input className='input-2' type='text' placeholder=" type some stuff" />
             </div>
-            <button className='button' onClick={clickMe} type='button'>Get a new meme image</button>
-            <img className='image' src={Fry} alt='fry' onMouseOver={clickMe} />
-            <div>{props.data.name}</div>
+            <button className='button' type='button'>Get a new meme image</button>
+             <img className='image' src={Fry} alt='fry' onClick={handleClick} />
+            <div>{newMeme}</div>
            </div> 
     )
 }
