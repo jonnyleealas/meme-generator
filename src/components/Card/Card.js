@@ -1,6 +1,8 @@
 import './card.css'
 import Fry from '../Card/cardImage/memeimg.png'
-const Card = () => {
+
+
+const Card = (props) => {
 
     const clickMe = () => {
         return alert('hello')
@@ -14,7 +16,8 @@ const Card = () => {
             </div>
             <button className='button' onClick={clickMe} type='button'>Get a new meme image</button>
             <img className='image' src={Fry} alt='fry' onMouseOver={clickMe} />
-        </div>
+            <div>{props.data.name}</div>
+           </div> 
     )
 }
 
