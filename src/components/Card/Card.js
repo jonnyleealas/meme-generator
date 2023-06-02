@@ -12,7 +12,12 @@ const Card = () => {
     const newMeme = Memes[randomNumber].name
   console.log('Memes:', randomNumber)
   console.log('Memes:', Memes[randomNumber].name)
-    return 
+    return (
+        <div>
+
+        newMeme
+        </div>
+    )
     
   }
 
@@ -25,7 +30,7 @@ const Card = () => {
             </div>
             <button className='button' type='button'>Get a new meme image</button>
              <img className='image' src={Fry} alt='fry' onClick={handleClick} />
-            <div>{newMeme}</div>
+            {/* <div>{newMeme}</div> */}
            </div> 
     )
 }
