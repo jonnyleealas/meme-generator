@@ -1,24 +1,14 @@
+import { useState } from 'react'
 import './card.css'
-import Fry from '../Card/cardImage/memeimg.png'
 import Memes from '../../memeData'
 
 
 const Card = () => {
-    
+    const [imageState, setImageState] = useState('')
 
   const handleClick = () => {
-    const memeLength = Memes.length
-    const randomNumber = Math.floor(Math.random() * memeLength)
-    const newMeme = Memes[randomNumber].name
-  console.log('Memes:', randomNumber)
-  console.log('Memes:', Memes[randomNumber].name)
-    return (
-        <div>
-
-        newMeme
-        </div>
-    )
-    
+    const randomName = Memes[Math.floor(Math.random() * Memes.length)].image
+    setImageState(randomName)
   }
 
 
@@ -28,9 +18,9 @@ const Card = () => {
                 <input className='input-1' type='text' placeholder=' type some stuff' />
                 <input className='input-2' type='text' placeholder=" type some stuff" />
             </div>
-            <button className='button' type='button'>Get a new meme image</button>
-             <img className='image' src={Fry} alt='fry' onClick={handleClick} />
-            {/* <div>{newMeme}</div> */}
+            <button className='button' type='button' onClick={handleClick}>Get a new meme image</button>
+             <img className='image' src={imageState} alt='fry' />
+              <div>{imageState.id}</div>
            </div> 
     )
 }
