@@ -62,5 +62,12 @@
 
 .image {
     padding-top: 3em;
+    border-style: solid;
+    border-color: black;
+    border-width: thin;
+    border-width: medium;
+    
+    width: 465px;
+    height: 268px;
 }
 

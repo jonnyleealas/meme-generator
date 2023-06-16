@@ -4,14 +4,14 @@ import Memes from '../../memeData'
 
 
 const Card = () => {
-    const [imageState, setImageState] = useState('')
-
+  const [memeState, setMemeState] = useState('')
+  
   const handleClick = () => {
-    const randomName = Memes[Math.floor(Math.random() * Memes.length)].image
-    setImageState(randomName)
-  }
+    const randomIndex = Math.floor(Math.random() * Memes.length)
+    const randomImage = Memes[randomIndex].image
+     setMemeState(randomImage)
 
-
+   }
     return (
         <div className='card'>
             <div className='input-container'>
@@ -19,8 +19,7 @@ const Card = () => {
                 <input className='input-2' type='text' placeholder=" type some stuff" />
             </div>
             <button className='button' type='button' onClick={handleClick}>Get a new meme image</button>
-             <img className='image' src={imageState} alt='fry' />
-              <div>{imageState.id}</div>
+             <img className='image' src={memeState} alt='fry' />
            </div> 
     )
 }
