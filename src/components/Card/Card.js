@@ -5,10 +5,10 @@ import Memes from '../../memeData'
 
 const Card = () => {
   const [memeState, setMemeState] = useState('')
+  const randomFirstMeme = Memes[Math.floor(Math.random() * Memes.length)].image
   
   const handleClick = () => {
-    const randomIndex = Math.floor(Math.random() * Memes.length)
-    const randomImage = Memes[randomIndex].image
+    const randomImage = Memes[Math.floor(Math.random() * Memes.length)].image
      setMemeState(randomImage)
 
    }
@@ -19,7 +19,7 @@ const Card = () => {
                 <input className='input-2' type='text' placeholder=" type some stuff" />
             </div>
             <button className='button' type='button' onClick={handleClick}>Get a new meme image</button>
-             <img className='image' src={memeState} alt='fry' />
+             <img className='image' src={memeState === '' ? randomFirstMeme : memeState} alt='fry' />
            </div> 
     )
 }
