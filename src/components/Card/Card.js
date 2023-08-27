@@ -6,13 +6,25 @@ import Memes from '../../memeData'
 const Card = () => {
   const firstRandomImage = Memes[Math.floor(Math.random() * Memes.length)].image
   const [memeState, setMemeState] = useState({
-    topName: '',
-    bottomName: '',
-    memeImage: firstRandomImage
+    topText: '',
+    bottomText: '',
+    memeImage: firstRandomImage,
   })
 
   const [allMemes, setAllMemes] = useState(Memes)
-  console.log(Memes)
+
+
+  const handleChange = (e) => {
+    const { name, type, value } = e.target
+    setMemeState(prevMemeState => {
+      return {
+        ...prevMemeState,
+        [name]: value
+      }
+    })
+  }
+
+  console.log(memeState)
 
   const handleClick = () => {
     const newMeme = allMemes[Math.floor(Math.random() * allMemes.length)].image
@@ -23,16 +35,41 @@ const Card = () => {
     }))
   }
 
-    return (
-        <div className='card'>
-            <div className='input-container'>
-                <input className='input-1' type='text' placeholder=' type some stuff' />
-                <input className='input-2' type='text' placeholder=" type some stuff" />
-            </div>
-            <button className='button' type='button' onClick={handleClick} >Get a new meme image</button>
-             <img className='image' src={memeState.memeImage} alt='fry' />
-           </div> 
-    )
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(memeState)
+  }
+  return (
+
+    <form className='card' onSubmit={handleSubmit}>
+      <div className='input-container'>
+        <input
+          name="topText"
+          onChange={handleChange}
+          value={memeState.topText}
+          type='text'
+          placeholder=" Top Text"
+          className='topTextInput'
+        />
+        <input
+          name="bottomText"
+          onChange={handleChange}
+          value={memeState.bottomText}
+          type='text'
+          placeholder=" Bottom Text"
+          className='bottomTextInput'
+        />
+      </div>
+      <button className='button' type='button' onClick={handleClick} >Get a new meme image</button>
+      <button className='button' type='button' onClick={handleSubmit} >Submit</button>
+      <div className="memeWrapper">
+      <img className='image' src={memeState.memeImage} alt='fry' />
+      <div className='topText'>{memeState.topText}</div>
+      <div className='bottomText'>{memeState.bottomText}</div>
+      </div>
+    </form>
+
+  )
 }
 
 

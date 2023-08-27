@@ -13,7 +13,7 @@
 
 }
 
-.input-1 {
+.topTextInput {
     width: 230px;
     height: 35px;
     border-style: solid;
@@ -26,7 +26,7 @@
     
 }
 
-.input-2 {
+.bottomTextInput {
     width: 230px;
     height: 35px;
     border-style: solid;
@@ -71,3 +71,24 @@
     height: 268px;
 }
 
+.memeWrapper {
+    position: relative;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    -webkit-text-stroke: 2px black;
+    font-size: 2em;
+}
+
+.topText {
+    border-style: none;
+    position: absolute;
+    top: 2em;
+    left: 3em;
+}
+
+.bottomText {
+    border-style: none;
+    position: absolute;
+    top: 4em;
+    left: 3em;
+}
