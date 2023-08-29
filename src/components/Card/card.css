@@ -60,15 +60,20 @@
     transition: .2s;
 }
 
+
+
 .image {
-    padding-top: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
     border-style: solid;
     border-color: black;
     border-width: thin;
     border-width: medium;
     
     width: 465px;
-    height: 268px;
+    
 }
 
 .memeWrapper {
